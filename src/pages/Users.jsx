@@ -604,7 +604,8 @@ window.location = "/login";
 }
 
 
-const API = "http://127.0.0.1:8000/api/users/";
+// const API = "http://127.0.0.1:8000/api/users/";
+const API = "https://react-portfolio-7ed4.onrender.com/api/users/";
 
 
 const [users, setUsers] = useState([]);
