@@ -21,20 +21,19 @@
 // }
 // export default Sidebar;
 
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles.css";
 
 function Sidebar(){
 
 const role = localStorage.getItem("role");
+const navigate = useNavigate();
 
 return(
 
 <div className="sidebar">
 
 <h2>Admin Panel</h2>
-
 
 <div className="sidebar-menu">
 
@@ -48,23 +47,19 @@ return(
 
 </div>
 
-
-<button className="sidebar-logout"
-
+<button
+className="sidebar-logout"
 onClick={()=>{
 
 localStorage.clear();
-
-window.location="/login";
+navigate("/login");
 
 }}
-
 >
 
 Logout
 
 </button>
-
 
 </div>
 

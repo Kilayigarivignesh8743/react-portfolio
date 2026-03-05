@@ -1,15 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
 
 function Login(){
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
-
+const navigate = useNavigate();
 
 function handleLogin(){
 
-// fetch("http://127.0.0.1:8000/api/login/",{
 fetch("https://react-portfolio-7ed4.onrender.com/api/login/",{
 
 method:"POST",
@@ -36,7 +36,7 @@ if(data.token){
 localStorage.setItem("token", data.token);
 localStorage.setItem("role", data.role);
 
-window.location="/";
+navigate("/");   // changed here
 
 }else{
 
@@ -47,8 +47,6 @@ alert("Invalid credentials");
 })
 
 }
-
-
 
 return(
 
@@ -65,7 +63,6 @@ value={username}
 onChange={(e)=>setUsername(e.target.value)}
 />
 
-
 <input
 type="password"
 placeholder="Password"
@@ -73,11 +70,9 @@ value={password}
 onChange={(e)=>setPassword(e.target.value)}
 />
 
-
 <button onClick={handleLogin}>
 Login
 </button>
-
 
 </div>
 
