@@ -590,6 +590,7 @@
 
 import Sidebar from "../components/Sidebar";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
 import "./users.css";   // import css
 
@@ -597,10 +598,11 @@ import "./users.css";   // import css
 
 function Users() {
 
+const navigate = useNavigate();
 const token = localStorage.getItem("token");
 
 if (!token) {
-window.location = "/login";
+  navigate("/login");
 }
 
 

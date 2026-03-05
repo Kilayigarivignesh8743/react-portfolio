@@ -21,6 +21,9 @@
 // }
 // export default Sidebar;
 
+
+
+
 import { Link, useNavigate } from "react-router-dom";
 import "../styles.css";
 
@@ -40,9 +43,7 @@ return(
 <Link to="/">Dashboard</Link>
 
 {role==="admin" && (
-
 <Link to="/users">Users</Link>
-
 )}
 
 </div>
@@ -50,15 +51,11 @@ return(
 <button
 className="sidebar-logout"
 onClick={()=>{
-
 localStorage.clear();
 navigate("/login");
-
 }}
 >
-
 Logout
-
 </button>
 
 </div>
